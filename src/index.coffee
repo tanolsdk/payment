@@ -3010,6 +3010,7 @@ cards = [
       type: 'visaelectron'
       niceName: 'Visa Electrón'
       olpaysType: 'VISADEBIT'
+      cardType: 'debit'
       pattern: [
         {
           start: 4190800000000000
@@ -3029,6 +3030,7 @@ cards = [
       type: 'naranja'
       niceName: 'Naranja'
       olpaysType: 'NARANJA'
+      cardType: 'credit'
       pattern: [
         {
           start: 5895620000000000
@@ -3048,6 +3050,7 @@ cards = [
       type: 'visa'
       niceName: 'Visa'
       olpaysType: 'VISA'
+      cardType: 'credit'
       pattern: [
         {
           start: 4442680001354859
@@ -3119,6 +3122,7 @@ cards = [
       type: 'dinersclub'
       niceName: 'Diners Club'
       olpaysType: 'DINERS'
+      cardType: 'credit'
       pattern: [
         {
           start: 30400000000000
@@ -3142,6 +3146,7 @@ cards = [
       type: 'nativamastercredit'
       niceName: 'Nativa Mastercard'
       olpaysType: 'MASTER'
+      cardType: 'credit'
       pattern: [
         {
           start: 546553
@@ -3157,6 +3162,7 @@ cards = [
     type: 'argencard'
     niceName: 'Argencard'
     olpaysType: 'ARGENCARD'
+    cardType: 'credit'
     pattern: [
       {
         start: 5010910000000000
@@ -3184,6 +3190,7 @@ cards = [
     type: 'lider'
     niceName: 'Lider'
     olpaysType: 'LIDER'
+    cardType: 'credit'
     pattern: [
       {
         start: 5010900000000000
@@ -3215,6 +3222,7 @@ cards = [
     type: 'nevada'
     niceName: 'Nevada'
     olpaysType: 'NEVADA'
+    cardType: 'credit'
     pattern: [
       {
         start: 5043630000000000
@@ -3230,6 +3238,7 @@ cards = [
       type: 'masterdebit'
       niceName: 'Master Debit'
       olpaysType: 'MCDEBIT'
+      cardType: 'debit'
       pattern: [
         {
           start: 5118490000000000
@@ -3253,6 +3262,7 @@ cards = [
       type: 'mastercard'
       niceName: 'Mastercard'
       olpaysType: 'MASTER'
+      cardType: 'credit'
       pattern: [
         {
           start: 2221000000000000
@@ -3304,6 +3314,7 @@ cards = [
       type: 'cmr'
       niceName: 'CMR Falabella'
       olpaysType: 'CMR'
+      cardType: 'credit'
       pattern: [
         {
           start: 6000010000000000
@@ -3323,6 +3334,7 @@ cards = [
       type: 'cabaldebito'
       niceName: 'Cabal 24'
       olpaysType: 'CABALDEBIT'
+      cardType: 'debit'
       pattern: [
         {
           start: 6042096300000000
@@ -3354,6 +3366,7 @@ cards = [
       type: 'cabal'
       niceName: 'Cabal'
       olpaysType: 'CABAL'
+      cardType: 'credit'
       pattern: [
         {
           start: 6042010000000000
@@ -3381,6 +3394,7 @@ cards = [
       type: 'maestro'
       niceName: 'Maestro'
       olpaysType: 'MCDEBIT'
+      cardType: 'debit'
       pattern: [
         {
           start: 500000000000
@@ -3436,6 +3450,7 @@ cards = [
       type: 'amex'
       niceName: 'American Express'
       olpaysType: 'AMEX'
+      cardType: 'credit'
       pattern: [
         {
           start: 376450000000000
@@ -3459,6 +3474,7 @@ cards = [
       type: 'jcb'
       niceName: 'JCB'
       olpaysType: 'JBC'
+      cardType: 'credit'
       pattern: [
         {
           start: 3500000000000000
@@ -3840,6 +3856,9 @@ class Payment
     cardOlpaysType: (num) ->
       return null unless num
       cardFromNumber(num)?.olpaysType or null
+    cardOlpaysCardType: (num) ->
+      return null unless num
+      cardFromNumber(num)?.cardType or null
     cardCustomFromType: (type) ->
       return null unless type
       cardFromType(type)?.type or null
